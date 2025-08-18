@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bachelor Help Desk - Settle in Smarter</title>
+    <!-- 1. NAME CHANGE: Updated the title -->
+    <title>BachNest - Your Urban Living Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Adding icon library for contact section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Using a more modern and clean font */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8fafc; /* A light, clean background (slate-50) */
+            background-color: #f8fafc; /* slate-50 */
         }
-        /* Custom styles for button shadows and transitions */
         .primary-btn {
             transition: all 0.3s ease;
         }
@@ -36,32 +37,43 @@
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
             border-color: #4f46e5; /* indigo-600 */
         }
+        /* Style for the new search bar */
+        .search-wrapper {
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body class="text-slate-800">
 
+    <!-- Header & Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600">Bachelor Help Desk</a>
+            <!-- 1. NAME CHANGE: Updated the logo text -->
+            <a href="#" class="text-2xl font-bold text-indigo-600">BachNest</a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#services" class="text-slate-600 hover:text-indigo-600">Services</a>
-                <a href="#how-it-works" class="text-slate-600 hover:text-indigo-600">How It Works</a>
-                <a href="#" class="text-slate-600 hover:text-indigo-600">Community</a>
+                <!-- 3. ABOUT US: Added nav link -->
+                <a href="#about" class="text-slate-600 hover:text-indigo-600">About Us</a>
+                <!-- 4. CONTACT: Added nav link -->
+                <a href="#contact" class="text-slate-600 hover:text-indigo-600">Contact</a>
             </div>
+            <!-- 5. ENHANCED HEADER: Made Sign Up button slightly larger and more prominent -->
             <div class="hidden md:flex items-center space-x-4">
-                 <a href="#" class="text-slate-600 hover:text-indigo-600">Log In</a>
-                 <a href="#" class="primary-btn bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg">Sign Up</a>
+                 <a href="#" class="text-slate-600 hover:text-indigo-600 font-medium">Log In</a>
+                 <a href="#" class="primary-btn bg-indigo-600 text-white font-semibold px-6 py-2.5 rounded-lg">Sign Up</a>
             </div>
+            <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </nav>
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
              <a href="#services" class="block text-slate-600 hover:text-indigo-600">Services</a>
-             <a href="#how-it-works" class="block text-slate-600 hover:text-indigo-600">How It Works</a>
-             <a href="#" class="block text-slate-600 hover:text-indigo-600">Community</a>
+             <a href="#about" class="block text-slate-600 hover:text-indigo-600">About Us</a>
+             <a href="#contact" class="block text-slate-600 hover:text-indigo-600">Contact</a>
              <hr/>
              <a href="#" class="block text-slate-600 hover:text-indigo-600">Log In</a>
              <a href="#" class="block primary-btn bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg text-center">Sign Up</a>
@@ -69,28 +81,30 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="relative bg-white">
-            <div class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 text-center md:text-left">
-                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
-                        Moving to a new city?
-                        <br>
-                        <span class="text-indigo-600">We've got your back.</span>
-                    </h1>
-                    <p class="mt-6 text-lg text-slate-600 max-w-lg mx-auto md:mx-0">
-                        Find verified flats, rent essential appliances, and connect with trusted local services. Settle in faster, without the hassle.
-                    </p>
-                    <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                        <a href="#services" class="primary-btn bg-indigo-600 text-white font-bold py-4 px-8 rounded-lg text-lg">Explore Services</a>
-                        <a href="#how-it-works" class="secondary-btn bg-slate-200 text-slate-800 font-bold py-4 px-8 rounded-lg text-lg">Learn More</a>
+            <div class="container mx-auto px-6 py-20 md:py-24 flex flex-col items-center text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                    Moving to a new city?
+                    <br>
+                    <span class="text-indigo-600">We've got your back.</span>
+                </h1>
+                <p class="mt-6 text-lg text-slate-600 max-w-2xl">
+                    Find verified flats, rent essential appliances, and connect with trusted local services. Settle in faster, without the hassle.
+                </p>
+                
+                <!-- 2. SEARCH SECTION: Added a search bar -->
+                <div class="mt-10 w-full max-w-2xl">
+                    <div class="search-wrapper relative flex items-center bg-white rounded-full p-2">
+                        <i class="fas fa-search text-slate-400 pl-4"></i>
+                        <input type="text" placeholder="Search for flats, PGs, rentals, or services..." class="w-full bg-transparent p-3 text-lg text-slate-700 focus:outline-none">
+                        <button class="primary-btn bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full">Search</button>
                     </div>
-                </div>
-                <div class="md:w-1/2 mt-12 md:mt-0">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop" alt="Happy person in a new apartment" class="rounded-2xl shadow-2xl">
                 </div>
             </div>
         </section>
 
+        <!-- Services Section (Unchanged) -->
         <section id="services" class="py-20 bg-slate-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -108,7 +122,7 @@
                     </div>
                     <div class="service-card bg-white p-8 rounded-2xl text-center">
                         <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
                         </div>
                         <h3 class="text-2xl font-bold mt-6">Rental Appliances</h3>
                         <p class="mt-2 text-slate-600">Get ACs, fridges, washers, and more delivered to your doorstep. Affordable and hassle-free.</p>
@@ -116,7 +130,7 @@
                     </div>
                     <div class="service-card bg-white p-8 rounded-2xl text-center">
                          <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.283.356-1.857m0 0a3.004 3.004 0 01-3.708 0M2 12a9 9 0 0118 0h-2a7 7 0 00-14 0H2z" /></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.283.356-1.857m0 0a3.004 3.004 0 01-3.708 0M2 12a9 9 0 0118 0h-2a7 7 0 00-14 0H2z" /></svg>
                         </div>
                         <h3 class="text-2xl font-bold mt-6">Trusted Local Help</h3>
                         <p class="mt-2 text-slate-600">Connect with vetted maids and reliable tiffin services reviewed by our community.</p>
@@ -126,66 +140,102 @@
             </div>
         </section>
 
-        <section id="how-it-works" class="py-20 bg-white">
-             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900">Get Started in 3 Simple Steps</h2>
-                    <p class="mt-4 text-slate-600 text-lg">Your new life is just a few clicks away.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div>
-                        <div class="text-5xl font-extrabold text-indigo-200">01</div>
-                        <h3 class="text-2xl font-bold mt-4">Choose a Service</h3>
-                        <p class="mt-2 text-slate-600">Select what you need first - a home, appliances, or local help.</p>
+        <!-- 3. ABOUT US SECTION: Image updated for better impact -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <!-- IMAGE CHANGE: Replaced the team photo with a more relatable one -->
+                        <img src="https://images.unsplash.com/photo-1628624747234-3595a0a38f32?q=80&w=2787&auto=format&fit=crop" alt="Person looking stressed while surrounded by moving boxes" class="rounded-2xl shadow-xl">
                     </div>
-                     <div>
-                        <div class="text-5xl font-extrabold text-indigo-200">02</div>
-                        <h3 class="text-2xl font-bold mt-4">Browse & Select</h3>
-                        <p class="mt-2 text-slate-600">Explore our verified listings and choose the perfect options for you.</p>
-                    </div>
-                     <div>
-                        <div class="text-5xl font-extrabold text-indigo-200">03</div>
-                        <h3 class="text-2xl font-bold mt-4">Book & Relax</h3>
-                        <p class="mt-2 text-slate-600">Confirm your booking online, and we'll handle the rest. Welcome home!</p>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold text-slate-900">Why BachNest?</h2>
+                        <p class="mt-4 text-slate-600 text-lg">We started BachNest because we've been there. Moving to a new city is exciting, but it's also filled with challenges. Our mission is to remove the friction and build a transparent ecosystem for urban living.</p>
+                        
+                        <div class="mt-8 space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center"><i class="fas fa-check"></i></div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-xl">Direct & Transparent</h4>
+                                    <p class="text-slate-600 mt-1">No middlemen, no hidden fees. We connect you directly with verified owners and service providers for a fair and honest experience.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center"><i class="fas fa-shield-alt"></i></div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold text-xl">Verified for Your Security</h4>
+                                    <p class="text-slate-600 mt-1">Every listing and service on our platform is carefully vetted by our team, so you can rent and hire with complete peace of mind.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- 4. CONTACT SECTION: New section added -->
+        <section id="contact" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-slate-900">Get In Touch</h2>
+                <p class="mt-4 text-slate-600 text-lg max-w-2xl mx-auto">Have questions or need support? We're here to help you settle in. Reach out to us anytime.</p>
+                <div class="mt-12 flex flex-col md:flex-row justify-center gap-8 md:gap-16">
+                    <div class="text-center">
+                        <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md">
+                            <i class="fas fa-phone-alt text-3xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Phone Number</h3>
+                        <a href="tel:9560493506" class="text-lg text-slate-600 hover:text-indigo-600 mt-2 inline-block">9560493506</a>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md">
+                            <i class="fas fa-envelope text-3xl text-indigo-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Email Address</h3>
+                        <a href="mailto:hgoelt24@gmail.com" class="text-lg text-slate-600 hover:text-indigo-600 mt-2 inline-block">hgoelt24@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- Footer -->
     <footer class="bg-slate-900 text-white">
         <div class="container mx-auto px-6 py-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div>
-                    <h4 class="font-bold text-lg">Bachelor Help Desk</h4>
+                    <!-- 1. NAME CHANGE: Updated footer name -->
+                    <h4 class="font-bold text-lg">BachNest</h4>
                     <p class="mt-4 text-slate-400">Settle in smarter.</p>
                 </div>
                 <div>
                     <h4 class="font-semibold">Services</h4>
                     <ul class="mt-4 space-y-2 text-slate-400">
-                        <li><a href="#" class="hover:text-white">Flats & PGs</a></li>
-                        <li><a href="#" class="hover:text-white">Appliance Rentals</a></li>
-                        <li><a href="#" class="hover:text-white">Local Services</a></li>
+                        <li><a href="#services" class="hover:text-white">Flats & PGs</a></li>
+                        <li><a href="#services" class="hover:text-white">Appliance Rentals</a></li>
+                        <li><a href="#services" class="hover:text-white">Local Services</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold">Company</h4>
                     <ul class="mt-4 space-y-2 text-slate-400">
-                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#about" class="hover:text-white">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact</a></li>
                         <li><a href="#" class="hover:text-white">Careers</a></li>
-                        <li><a href="#" class="hover:text-white">Contact</a></li>
                     </ul>
                 </div>
                  <div>
                     <h4 class="font-semibold">Connect</h4>
                     <div class="mt-4 flex space-x-4">
-                        <a href="#" class="text-slate-400 hover:text-white">Facebook</a>
-                        <a href="#" class="text-slate-400 hover:text-white">Twitter</a>
+                        <a href="#" class="text-slate-400 hover:text-white text-2xl"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white text-2xl"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white text-2xl"><i class="fab fa-instagram-square"></i></a>
                     </div>
                 </div>
             </div>
             <div class="mt-12 border-t border-slate-700 pt-8 text-center text-slate-500">
-                <p>&copy; 2025 Bachelor Help Desk. All rights reserved.</p>
+                <!-- 1. NAME CHANGE: Updated copyright -->
+                <p>&copy; 2025 BachNest. All rights reserved.</p>
             </div>
         </div>
     </footer>

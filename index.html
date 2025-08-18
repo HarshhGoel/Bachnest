@@ -3,243 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BachNest - Your Urban Living Assistant</title>
+    <title>Bachelor Help Desk - Settle in Smarter</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Using a more modern and clean font */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* slate-900 */
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc; /* A light, clean background (slate-50) */
         }
-        .form-section-card {
-            background-color: #1e293b; /* slate-800 */
-            border: 1px solid #334155; /* slate-700 */
-            border-radius: 1rem; /* rounded-2xl */
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            transition: all 0.3s ease-in-out;
+        /* Custom styles for button shadows and transitions */
+        .primary-btn {
+            transition: all 0.3s ease;
         }
-        .form-section-card:hover {
-             border-color: #4f46e5; /* indigo-600 */
-             transform: translateY(-2px);
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -10px rgba(79, 70, 229, 0.5);
         }
-        .form-input-container {
-            position: relative;
+        .secondary-btn {
+            transition: all 0.3s ease;
         }
-        .form-input-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #64748b; /* slate-500 */
+        .secondary-btn:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 10px 20px -10px rgba(100, 116, 139, 0.3);
         }
-        .form-input {
-            padding-left: 3rem; /* pl-12 */
-            background-color: #0f172a; /* slate-900 */
-            border-color: #334155; /* slate-700 */
-            color: #e2e8f0; /* slate-200 */
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0; /* slate-200 */
         }
-        .form-input::placeholder {
-            color: #64748b; /* slate-500 */
-        }
-        .form-input:focus {
-            --tw-ring-color: #4f46e5; /* indigo-600 */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
             border-color: #4f46e5; /* indigo-600 */
-        }
-        
-        /* Custom Checkbox & Toggle Styling */
-        .custom-checkbox {
-            background-color: #334155; /* slate-700 */
-            border-color: #475569; /* slate-600 */
-        }
-        .custom-checkbox:checked {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-            background-color: #6366F1;
-            border-color: #6366F1;
-        }
-        .toggle-bg:after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            background: white;
-            border-radius: 9999px;
-            width: 1.25rem;
-            height: 1.25rem;
-            transition: all 0.2s ease-in-out;
-        }
-        input:checked + .toggle-bg:after {
-            transform: translateX(100%);
-        }
-        input:checked + .toggle-bg {
-            background: #4f46e5; /* indigo-600 */
-        }
-
-        /* Rental Buttons Styling */
-        .rental-label {
-            transition: all 0.2s ease-in-out;
-            background-color: #334155; /* slate-700 */
-            border-color: #475569; /* slate-600 */
-            color: #cbd5e1; /* slate-300 */
-        }
-        .rental-input:checked + .rental-label {
-            background: linear-gradient(to right, #4f46e5, #a855f7); /* Indigo-600 to Purple-500 */
-            color: white;
-            border-color: #4f46e5;
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px 0 rgba(168, 85, 247, 0.3);
-        }
-
-        /* Main Submit Button */
-        .submit-button {
-            background: linear-gradient(to right, #4f46e5, #7c3aed); /* Indigo-600 to Purple-600 */
-            transition: all 0.3s ease-in-out;
-        }
-        .submit-button:hover {
-            box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.5);
-            transform: translateY(-3px) scale(1.02);
         }
     </style>
 </head>
-<body class="text-slate-300">
+<body class="text-slate-800">
 
-    <div class="container mx-auto max-w-3xl p-4 sm:p-6 lg:p-8">
-        <header class="text-center mb-12">
-            <div class="inline-block bg-slate-800 p-4 rounded-2xl shadow-lg border border-slate-700 mb-4">
-                 <svg class="w-12 h-12 text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m-3-1l-3-1m-3 1l-3 1m3-1V7.5M6.75 7.5l-3 1" />
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">Bachelor Help Desk</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-slate-600 hover:text-indigo-600">Services</a>
+                <a href="#how-it-works" class="text-slate-600 hover:text-indigo-600">How It Works</a>
+                <a href="#" class="text-slate-600 hover:text-indigo-600">Community</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                 <a href="#" class="text-slate-600 hover:text-indigo-600">Log In</a>
+                 <a href="#" class="primary-btn bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg">Sign Up</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
-            </div>
-            <h1 class="text-5xl sm:text-6xl font-extrabold text-white tracking-tight">
-                Welcome to <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400">BachNest</span>
-            </h1>
-            <p class="text-lg text-slate-400 mt-3 max-w-xl mx-auto">Your personal assistant for urban living. Settle in and thrive in your new city.</p>
-        </header>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+             <a href="#services" class="block text-slate-600 hover:text-indigo-600">Services</a>
+             <a href="#how-it-works" class="block text-slate-600 hover:text-indigo-600">How It Works</a>
+             <a href="#" class="block text-slate-600 hover:text-indigo-600">Community</a>
+             <hr/>
+             <a href="#" class="block text-slate-600 hover:text-indigo-600">Log In</a>
+             <a href="#" class="block primary-btn bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg text-center">Sign Up</a>
+        </div>
+    </header>
 
-        <form id="bachNestForm" class="space-y-10">
-
-            <!-- Section 1: Personal Information -->
-            <div class="form-section-card p-6 sm:p-8">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-lg w-8 h-8 flex items-center justify-center mr-4 font-black text-lg">1</span>
-                    Your Details
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="form-input-container">
-                        <svg class="form-input-icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" /></svg>
-                        <input type="text" id="fullName" name="fullName" required class="form-input w-full px-4 py-3 rounded-lg focus:ring-2 transition-all" placeholder="Full Name">
+    <main>
+        <section class="relative bg-white">
+            <div class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                        Moving to a new city?
+                        <br>
+                        <span class="text-indigo-600">We've got your back.</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-slate-600 max-w-lg mx-auto md:mx-0">
+                        Find verified flats, rent essential appliances, and connect with trusted local services. Settle in faster, without the hassle.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                        <a href="#services" class="primary-btn bg-indigo-600 text-white font-bold py-4 px-8 rounded-lg text-lg">Explore Services</a>
+                        <a href="#how-it-works" class="secondary-btn bg-slate-200 text-slate-800 font-bold py-4 px-8 rounded-lg text-lg">Learn More</a>
                     </div>
-                    <div class="form-input-container">
-                        <svg class="form-input-icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" /><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" /></svg>
-                        <input type="email" id="email" name="email" required class="form-input w-full px-4 py-3 rounded-lg focus:ring-2 transition-all" placeholder="Email Address">
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop" alt="Happy person in a new apartment" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900">Everything You Need, All in One Place</h2>
+                    <p class="mt-4 text-slate-600 text-lg">Your one-stop solution for a smooth transition.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="service-card bg-white p-8 rounded-2xl text-center">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Verified Flats & PGs</h3>
+                        <p class="mt-2 text-slate-600">Broker-free listings you can trust. Find your perfect home with transparent pricing.</p>
+                        <a href="#" class="mt-6 inline-block text-indigo-600 font-semibold">Find a Home →</a>
+                    </div>
+                    <div class="service-card bg-white p-8 rounded-2xl text-center">
+                        <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Rental Appliances</h3>
+                        <p class="mt-2 text-slate-600">Get ACs, fridges, washers, and more delivered to your doorstep. Affordable and hassle-free.</p>
+                        <a href="#" class="mt-6 inline-block text-indigo-600 font-semibold">Rent Now →</a>
+                    </div>
+                    <div class="service-card bg-white p-8 rounded-2xl text-center">
+                         <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.124-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.124-1.283.356-1.857m0 0a3.004 3.004 0 01-3.708 0M2 12a9 9 0 0118 0h-2a7 7 0 00-14 0H2z" /></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mt-6">Trusted Local Help</h3>
+                        <p class="mt-2 text-slate-600">Connect with vetted maids and reliable tiffin services reviewed by our community.</p>
+                        <a href="#" class="mt-6 inline-block text-indigo-600 font-semibold">Find Services →</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Section 2: Accommodation Needs -->
-            <div class="form-section-card p-6 sm:p-8">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-lg w-8 h-8 flex items-center justify-center mr-4 font-black text-lg">2</span>
-                    Your New Home
-                </h2>
-                <div class="space-y-4 mb-6">
-                    <label class="flex items-center p-4 border border-slate-700 rounded-lg hover:bg-slate-700/50 cursor-pointer transition-all">
-                        <input name="accommodation" type="checkbox" class="custom-checkbox h-5 w-5 text-indigo-500 rounded-md focus:ring-indigo-500 transition-all">
-                        <span class="ml-4 font-medium text-slate-300">Find a Flat / Apartment</span>
-                    </label>
-                    <label class="flex items-center p-4 border border-slate-700 rounded-lg hover:bg-slate-700/50 cursor-pointer transition-all">
-                        <input name="accommodation" type="checkbox" class="custom-checkbox h-5 w-5 text-indigo-500 rounded-md focus:ring-indigo-500 transition-all">
-                        <span class="ml-4 font-medium text-slate-300">Find a Paying Guest (PG)</span>
-                    </label>
+        <section id="how-it-works" class="py-20 bg-white">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-900">Get Started in 3 Simple Steps</h2>
+                    <p class="mt-4 text-slate-600 text-lg">Your new life is just a few clicks away.</p>
                 </div>
-                <div class="form-input-container">
-                    <svg class="form-input-icon w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.106.36-.24.51-.397.17-.17.318-.364.438-.572.244-.42.4-.885.516-1.37A12.04 12.04 0 0013 11V9.5a2.5 2.5 0 00-2.5-2.5h-1A2.5 2.5 0 007 9.5V11c0 .823.156 1.62.432 2.356.116.485.272.95.516 1.37.12.208.268.402.438.572.15.157.324.291.51.397.096.054.192.103.281.14l.018.008.006.003zM10 11.25a.75.75 0 01.75.75v.007c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-.007a.75.75 0 01.75-.75z" clip-rule="evenodd" /></svg>
-                    <input type="text" id="preferredLocation" name="preferredLocation" class="form-input w-full px-4 py-3 rounded-lg focus:ring-2 transition-all" placeholder="Preferred Location (e.g., Koramangala)">
-                </div>
-            </div>
-            
-            <!-- Section 3: Furnish Your Space -->
-            <div class="form-section-card p-6 sm:p-8">
-                 <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-lg w-8 h-8 flex items-center justify-center mr-4 font-black text-lg">3</span>
-                    Furnish Your Space
-                </h2>
-                <p class="text-sm text-slate-400 mb-4">Select items to rent. We'll find the best deals.</p>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    <input id="rentAC" name="rentals" type="checkbox" class="hidden rental-input">
-                    <label for="rentAC" class="rental-label block p-3 text-center border rounded-lg cursor-pointer font-medium">AC</label>
-                    <input id="rentWashingMachine" name="rentals" type="checkbox" class="hidden rental-input">
-                    <label for="rentWashingMachine" class="rental-label block p-3 text-center border rounded-lg cursor-pointer font-medium">Washer</label>
-                    <input id="rentFridge" name="rentals" type="checkbox" class="hidden rental-input">
-                    <label for="rentFridge" class="rental-label block p-3 text-center border rounded-lg cursor-pointer font-medium">Fridge</label>
-                    <input id="rentBed" name="rentals" type="checkbox" class="hidden rental-input">
-                    <label for="rentBed" class="rental-label block p-3 text-center border rounded-lg cursor-pointer font-medium">Bed</label>
-                    <input id="rentTable" name="rentals" type="checkbox" class="hidden rental-input">
-                    <label for="rentTable" class="rental-label block p-3 text-center border rounded-lg cursor-pointer font-medium">Table</label>
-                    <input id="rentSofa" name="rentals" type="checkbox" class="hidden rental-input">
-                    <label for="rentSofa" class="rental-label block p-3 text-center border rounded-lg cursor-pointer font-medium">Sofa</label>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-5xl font-extrabold text-indigo-200">01</div>
+                        <h3 class="text-2xl font-bold mt-4">Choose a Service</h3>
+                        <p class="mt-2 text-slate-600">Select what you need first - a home, appliances, or local help.</p>
+                    </div>
+                     <div>
+                        <div class="text-5xl font-extrabold text-indigo-200">02</div>
+                        <h3 class="text-2xl font-bold mt-4">Browse & Select</h3>
+                        <p class="mt-2 text-slate-600">Explore our verified listings and choose the perfect options for you.</p>
+                    </div>
+                     <div>
+                        <div class="text-5xl font-extrabold text-indigo-200">03</div>
+                        <h3 class="text-2xl font-bold mt-4">Book & Relax</h3>
+                        <p class="mt-2 text-slate-600">Confirm your booking online, and we'll handle the rest. Welcome home!</p>
+                    </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <!-- Section 4: Ongoing Engagement Features -->
-            <div class="form-section-card p-6 sm:p-8">
-                 <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                    <span class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-lg w-8 h-8 flex items-center justify-center mr-4 font-black text-lg">4</span>
-                    Live Smarter
-                </h2>
-                <p class="text-sm text-slate-400 mb-6">Unlock the full BachNest experience. Stay connected and save money.</p>
-                <div class="space-y-5">
-                    <label for="nestPerks" class="flex items-center justify-between p-4 border border-slate-700 rounded-lg hover:bg-slate-700/50 cursor-pointer transition-all">
-                        <div>
-                            <h3 class="font-medium text-slate-200">NestPerks</h3>
-                            <p class="text-xs text-slate-400">Get exclusive local deals & offers.</p>
-                        </div>
-                        <div class="relative">
-                            <input id="nestPerks" type="checkbox" class="hidden">
-                            <div class="toggle-bg bg-slate-600 border-2 border-transparent rounded-full w-11 h-6 transition-colors ease-in-out duration-200"></div>
-                        </div>
-                    </label>
-                     <label for="communityConnect" class="flex items-center justify-between p-4 border border-slate-700 rounded-lg hover:bg-slate-700/50 cursor-pointer transition-all">
-                        <div>
-                            <h3 class="font-medium text-slate-200">Community Connect</h3>
-                            <p class="text-xs text-slate-400">Join events & meetups in your area.</p>
-                        </div>
-                        <div class="relative">
-                            <input id="communityConnect" type="checkbox" class="hidden">
-                            <div class="toggle-bg bg-slate-600 border-2 border-transparent rounded-full w-11 h-6 transition-colors ease-in-out duration-200"></div>
-                        </div>
-                    </label>
+    <footer class="bg-slate-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold text-lg">Bachelor Help Desk</h4>
+                    <p class="mt-4 text-slate-400">Settle in smarter.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Services</h4>
+                    <ul class="mt-4 space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-white">Flats & PGs</a></li>
+                        <li><a href="#" class="hover:text-white">Appliance Rentals</a></li>
+                        <li><a href="#" class="hover:text-white">Local Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Company</h4>
+                    <ul class="mt-4 space-y-2 text-slate-400">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold">Connect</h4>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white">Facebook</a>
+                        <a href="#" class="text-slate-400 hover:text-white">Twitter</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Submission -->
-            <div class="pt-6 text-center">
-                <button type="submit" class="submit-button w-full md:w-auto text-white font-bold py-4 px-16 rounded-xl shadow-lg text-lg">
-                    Build My Nest
-                </button>
+            <div class="mt-12 border-t border-slate-700 pt-8 text-center text-slate-500">
+                <p>&copy; 2025 Bachelor Help Desk. All rights reserved.</p>
             </div>
-            
-            <!-- Form Submission Message -->
-            <div id="submissionMessage" class="hidden text-center mt-4 p-4 bg-green-900/50 text-green-300 border border-green-700 rounded-lg">
-                <h3 class="font-bold text-lg text-green-200">Success!</h3>
-                <p>Thank you for joining BachNest! We'll be in touch shortly to get you settled.</p>
-            </div>
-
-        </form>
-    </div>
+        </div>
+    </footer>
 
     <script>
-        const form = document.getElementById('bachNestForm');
-        const messageDiv = document.getElementById('submissionMessage');
-        const header = document.querySelector('header');
+        // Simple script for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            // For this demo, we just show a success message.
-            form.style.display = 'none'; // Hide the form
-            header.style.display = 'none'; // Hide the header too
-            messageDiv.classList.remove('hidden'); // Show the message
-            window.scrollTo(0, 0); // Scroll to top to see the message
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
     </script>
 

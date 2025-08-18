@@ -83,23 +83,27 @@
     <main>
         <!-- Hero Section -->
         <section class="relative bg-white">
-            <div class="container mx-auto px-6 py-20 md:py-24 flex flex-col items-center text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
-                    Moving to a new city?
-                    <br>
-                    <span class="text-indigo-600">We've got your back.</span>
-                </h1>
-                <p class="mt-6 text-lg text-slate-600 max-w-2xl">
-                    Find verified flats, rent essential appliances, and connect with trusted local services. Settle in faster, without the hassle.
-                </p>
-                
-                <!-- 2. SEARCH SECTION: Added a search bar -->
-                <div class="mt-10 w-full max-w-2xl">
-                    <div class="search-wrapper relative flex items-center bg-white rounded-full p-2">
-                        <i class="fas fa-search text-slate-400 pl-4"></i>
-                        <input type="text" placeholder="Search for flats, PGs, rentals, or services..." class="w-full bg-transparent p-3 text-lg text-slate-700 focus:outline-none">
-                        <button class="primary-btn bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full">Search</button>
+            <div class="container mx-auto px-6 py-20 md:py-24 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
+                        Moving to a new city?
+                        <br>
+                        <span class="text-indigo-600">We've got your back.</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-slate-600 max-w-lg mx-auto md:mx-0">
+                        Find verified flats, rent essential appliances, and connect with trusted local services. Settle in faster, without the hassle.
+                    </p>
+                    <div class="mt-10 w-full max-w-lg">
+                        <div class="search-wrapper relative flex items-center bg-white rounded-full p-2">
+                            <i class="fas fa-search text-slate-400 pl-4"></i>
+                            <input type="text" placeholder="Search for flats, rentals, services..." class="w-full bg-transparent p-3 text-lg text-slate-700 focus:outline-none">
+                            <button class="primary-btn bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full">Search</button>
+                        </div>
                     </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0">
+                    <!-- NEW HERO IMAGE -->
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop" alt="Happy person in a new apartment" class="rounded-2xl shadow-2xl">
                 </div>
             </div>
         </section>

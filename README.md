@@ -1,6 +1,6 @@
 <div align="center">
 
-# BachNest (Bachelor Help Desk)
+# Dwello (Bachelor Help Desk)
 
 A unified platform designed to simplify the process of settling into a new city for students, bachelors, and young professionals. BachNest provides direct access to verified flats, rental appliances, and trusted local services, while also fostering a unique community-driven marketplace.
 

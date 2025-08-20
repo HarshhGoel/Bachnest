@@ -24,7 +24,7 @@ Relocating to a new city presents significant challenges: finding reliable housi
 
 </div>
 
-BachNest addresses these challenges by creating a centralized, transparent ecosystem. Our platform is built on trust and convenience, offering a single point of contact for essential services. By verifying all listings and fostering a peer-to-peer community, we ensure quality and reliability, allowing our users to settle in with confidence and ease.
+Dwello addresses these challenges by creating a centralized, transparent ecosystem. Our platform is built on trust and convenience, offering a single point of contact for essential services. By verifying all listings and fostering a peer-to-peer community, we ensure quality and reliability, allowing our users to settle in with confidence and ease.
 
 **Key Services & Features:**
 

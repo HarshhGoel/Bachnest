@@ -1,3 +1,5 @@
+<div align="center">
+
 # Dwello - Landing Page
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -5,25 +7,27 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+</div>
+
 This repository contains the source code for the Dwello landing page. Dwello is a platform designed to assist students and professionals with the challenges of relocating to a new city, starting with Greater Noida. The landing page serves as a comprehensive introduction to the platform's services.
 
 ---
 
-## 📋 Table of Contents
+<div align="center">
 
-1.  [Overview](#-overview)
-2.  [Key Features](#-key-features)
-3.  [Technology Stack](#-technology-stack)
+## Overview
 
----
-
-## 📝 Overview
+</div>
 
 Relocating presents several challenges, including finding verified housing without high brokerage fees, sourcing affordable appliances, and connecting with reliable local services. Dwello addresses these issues by providing a centralized platform focused on convenience and trust. This static landing page clearly outlines the value proposition and core functionalities offered to users.
 
 ---
 
-## 🚀 Key Features
+<div align="center">
+
+## Key Features
+
+</div>
 
 * **Dynamic Search Hub:** A tab-based interface allows users to search for Homes, Rentals, and Services.
 * **On-Demand Service Display:** A clear grid layout presents the marketplace of pay-per-use services such as cooks, cleaning, and Wi-Fi installation.
@@ -33,7 +37,11 @@ Relocating presents several challenges, including finding verified housing witho
 
 ---
 
-## 🛠️ Technology Stack
+<div align="center">
+
+## Technology Stack
+
+</div>
 
 This project is a static site built with modern web technologies and requires no build process to run locally.
 

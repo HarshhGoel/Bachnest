@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BachNest - Your Urban Living Assistant</title>
+    <title>Dwell - Stop Juggling Apps. Start Living.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -31,10 +31,43 @@
         .search-wrapper {
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
         }
-        /* Style for the active search tab */
         .search-tab.active {
             background-color: #4f46e5;
             color: white;
+        }
+        /* Style for the new Hub service icons */
+        .hub-icon-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 1rem; /* 16px */
+            padding: 1rem; /* 16px */
+            text-align: center;
+            font-weight: 600;
+            color: #334155; /* slate-700 */
+            border: 1px solid #e2e8f0; /* slate-200 */
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .hub-icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border-color: #4f46e5; /* indigo-600 */
+            color: #4f46e5;
+        }
+        .hub-icon-bg {
+            width: 4rem; /* 64px */
+            height: 4rem; /* 64px */
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #eef2ff; /* indigo-100 */
+            color: #4f46e5; /* indigo-600 */
+            font-size: 1.875rem; /* 30px */
+            margin-bottom: 0.75rem; /* 12px */
         }
     </style>
 </head>
@@ -42,9 +75,9 @@
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-600">BachNest</a>
+            <a href="#" class="text-2xl font-bold text-indigo-600">Dwell</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#services" class="text-slate-600 hover:text-indigo-600">Services</a>
+                <a href="#services" class="text-slate-600 hover:text-indigo-600">The Hub</a>
                 <a href="#listings" class="text-slate-600 hover:text-indigo-600">Listings</a>
                 <a href="#about" class="text-slate-600 hover:text-indigo-600">About Us</a>
                 <a href="#contact" class="text-slate-600 hover:text-indigo-600">Contact</a>
@@ -61,7 +94,7 @@
             </button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
-              <a href="#services" class="block text-slate-600 hover:text-indigo-600">Services</a>
+              <a href="#services" class="block text-slate-600 hover:text-indigo-600">The Hub</a>
               <a href="#listings" class="block text-slate-600 hover:text-indigo-600">Listings</a>
               <a href="#about" class="block text-slate-600 hover:text-indigo-600">About Us</a>
               <a href="#contact" class="block text-slate-600 hover:text-indigo-600">Contact</a>
@@ -77,29 +110,21 @@
             <div class="container mx-auto px-6 py-20 md:py-24 flex flex-col-reverse md:flex-row items-center gap-8">
                 <div class="md:w-1/2 text-center md:text-left">
                     <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
-                        Moving to a new city?
+                        Find a flat. Furnish it.
                         <br>
-                        <span class="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">We've got your back.</span>
+                        <span class="bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">Set up your life. In one tap.</span>
                     </h1>
-                    <p class="mt-6 text-lg text-slate-600 max-w-lg mx-auto md:mx-0">
-                        Find verified flats, rent essential appliances, and connect with trusted local services in Greater Noida. Settle in faster, without the hassle.
+                    <p class="mt-6 text-xl text-slate-600 max-w-lg mx-auto md:mx-0">
+                        Stop Juggling Apps. Start Living.
+                    </p>
+                    <p class="mt-4 text-lg text-slate-500 max-w-lg mx-auto md:mx-0">
+                        Dwell is the only app you need to find a home, rent furniture, and manage daily services in Greater Noida. All on one platform.
                     </p>
                     <div class="mt-10 w-full max-w-xl">
-                        <div class="flex items-center space-x-2 mb-4">
-                            <button class="search-tab active font-semibold py-2 px-5 rounded-full transition-colors duration-300" data-placeholder="Search for flats, PGs in Greater Noida...">
-                                <i class="fas fa-home mr-2"></i>Find a Home
-                            </button>
-                            <button class="search-tab font-semibold py-2 px-5 rounded-full transition-colors duration-300 bg-white text-slate-600 hover:bg-slate-100" data-placeholder="Search for AC, fridge, washing machine...">
-                                <i class="fas fa-box-open mr-2"></i>Rentals
-                            </button>
-                            <button class="search-tab font-semibold py-2 px-5 rounded-full transition-colors duration-300 bg-white text-slate-600 hover:bg-slate-100" data-placeholder="Search for tiffin, maids, laundry...">
-                                <i class="fas fa-users mr-2"></i>Services
-                            </button>
-                        </div>
-                        <div class="search-wrapper relative flex items-center bg-white rounded-full p-2">
+                         <div class="search-wrapper relative flex items-center bg-white rounded-full p-2">
                             <i class="fas fa-search text-slate-400 pl-4"></i>
-                            <input id="search-input" type="text" placeholder="Search for flats, PGs in Greater Noida..." class="w-full bg-transparent p-3 text-lg text-slate-700 focus:outline-none">
-                            <button class="primary-btn bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full">Find My Nest</button>
+                            <input id="search-input" type="text" placeholder="Search for flats & PGs in Greater Noida..." class="w-full bg-transparent p-3 text-lg text-slate-700 focus:outline-none">
+                            <button class="primary-btn bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full">Find My Home</button>
                         </div>
                     </div>
                 </div>
@@ -108,309 +133,63 @@
                 </div>
             </div>
         </section>
-
         <section class="bg-slate-50 py-8">
              <div class="container mx-auto px-6">
                  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                       <div>
-                           <p class="text-2xl font-bold text-indigo-600">150+</p>
-                           <p class="text-slate-500">Verified Listings</p>
-                       </div>
-                       <div>
-                           <p class="text-2xl font-bold text-indigo-600">Lowest</p>
-                           <p class="text-slate-500">Brokerage Guarantee</p>
-                       </div>
-                       <div>
-                           <p class="text-2xl font-bold text-indigo-600">24-Hour</p>
-                           <p class="text-slate-500">Support Guarantee</p>
-                       </div>
-                       <div>
-                           <p class="text-2xl font-bold text-indigo-600">50+</p>
-                           <p class="text-slate-500">Service Partners</p>
-                       </div>
+                         <div>
+                             <p class="text-2xl font-bold text-indigo-600">150+</p>
+                             <p class="text-slate-500">Verified Listings</p>
+                         </div>
+                         <div>
+                             <p class="text-2xl font-bold text-indigo-600">One App</p>
+                             <p class="text-slate-500">For Everything</p>
+                         </div>
+                         <div>
+                             <p class="text-2xl font-bold text-indigo-600">24-Hour</p>
+                             <p class="text-slate-500">Support Guarantee</p>
+                         </div>
+                         <div>
+                             <p class="text-2xl font-bold text-indigo-600">50+</p>
+                             <p class="text-slate-500">Service Partners</p>
+                         </div>
                  </div>
              </div>
         </section>
 
+
         <section id="services" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900">Everything You Need, All in One Place</h2>
-                    <p class="mt-4 text-slate-600 text-lg">Your one-stop solution for a smooth transition in Greater Noida.</p>
+                    <h2 class="text-4xl font-bold text-slate-900">Welcome to The Dwell Hub</h2>
+                    <p class="mt-4 text-slate-600 text-lg max-w-3xl mx-auto">Your rental is just the beginning. The Hub is your free control panel for your home, with on-demand services to make life easy.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <a href="#" class="card-hover block bg-white p-8 rounded-2xl text-center">
-                        <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
-                            <i class="fas fa-home text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mt-6">Verified Flats & PGs</h3>
-                        <p class="mt-2 text-slate-600">Transparent listings with our lowest brokerage guarantee. Find your perfect home.</p>
-                        <p class="mt-6 inline-block text-indigo-600 font-semibold">Find a Home →</p>
-                    </a>
-                    <a href="#" class="card-hover block bg-white p-8 rounded-2xl text-center">
-                        <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
-                             <i class="fas fa-box-open text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mt-6">Rental Appliances</h3>
-                        <p class="mt-2 text-slate-600">Get ACs, fridges, washers, and more delivered to your doorstep. Affordable and hassle-free.</p>
-                        <p class="mt-6 inline-block text-indigo-600 font-semibold">Rent Now →</p>
-                    </a>
-                    <a href="#" class="card-hover block bg-white p-8 rounded-2xl text-center">
-                         <div class="bg-indigo-100 text-indigo-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
-                               <i class="fas fa-users text-3xl"></i>
-                         </div>
-                        <h3 class="text-2xl font-bold mt-6">Trusted Local Help</h3>
-                        <p class="mt-2 text-slate-600">Connect with vetted maids and reliable tiffin services reviewed by our community.</p>
-                        <p class="mt-6 inline-block text-indigo-600 font-semibold">Find Services →</p>
-                    </a>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div class="hub-icon-card">
+                        <div class="hub-icon-bg"><i class="fas fa-utensils"></i></div>
+                        <span>Find a Cook</span>
+                    </div>
+                    <div class="hub-icon-card">
+                        <div class="hub-icon-bg"><i class="fas fa-wifi"></i></div>
+                        <span>Instant Wi-Fi</span>
+                    </div>
+                    <div class="hub-icon-card">
+                        <div class="hub-icon-bg"><i class="fas fa-broom"></i></div>
+                        <span>Home Cleaning</span>
+                    </div>
+                    <div class="hub-icon-card">
+                        <div class="hub-icon-bg"><i class="fas fa-tools"></i></div>
+                        <span>Repairs</span>
+                    </div>
+                    <div class="hub-icon-card">
+                        <div class="hub-icon-bg"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <span>Split Bills</span>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="listings" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900">Explore Our Top Properties</h2>
-                    <p class="mt-4 text-slate-600 text-lg">Handpicked and verified homes in prime locations of Greater Noida.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover border-transparent">
-                        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Modern 1BHK Apartment" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900">Modern 1BHK near Pari Chowk</h3>
-                            <p class="text-slate-500 mt-1">Knowledge Park III</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-lg font-bold text-indigo-600">₹15,000 <span class="text-sm font-normal text-slate-500">/ month</span></span>
-                                <div class="flex items-center space-x-4 text-slate-600">
-                                    <span><i class="fas fa-bed mr-1"></i> 1</span>
-                                    <span><i class="fas fa-bath mr-1"></i> 1</span>
-                                </div>
-                            </div>
-                            <a href="#" class="primary-btn mt-6 block w-full text-center bg-indigo-600 text-white font-semibold px-6 py-2.5 rounded-lg">View Details</a>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover border-transparent">
-                        <img src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Spacious PG Room" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900">Spacious PG Room (Male)</h3>
-                            <p class="text-slate-500 mt-1">Alpha 1</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-lg font-bold text-indigo-600">₹8,000 <span class="text-sm font-normal text-slate-500">/ bed</span></span>
-                                <span class="text-green-600 font-semibold bg-green-100 px-2 py-1 rounded-full text-sm">Meals Included</span>
-                            </div>
-                            <a href="#" class="primary-btn mt-6 block w-full text-center bg-indigo-600 text-white font-semibold px-6 py-2.5 rounded-lg">View Details</a>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover border-transparent">
-                        <img src="https://images.pexels.com/photos/5997996/pexels-photo-5997996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Furnished Studio Apartment" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900">Furnished Studio Apartment</h3>
-                            <p class="text-slate-500 mt-1">Omega II</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-lg font-bold text-indigo-600">₹12,500 <span class="text-sm font-normal text-slate-500">/ month</span></span>
-                                <div class="flex items-center space-x-4 text-slate-600">
-                                    <span><i class="fas fa-bed mr-1"></i> 1</span>
-                                    <span><i class="fas fa-bath mr-1"></i> 1</span>
-                                </div>
-                            </div>
-                            <a href="#" class="primary-btn mt-6 block w-full text-center bg-indigo-600 text-white font-semibold px-6 py-2.5 rounded-lg">View Details</a>
-                        </div>
-                    </div>
+                <div class="text-center mt-12">
+                     <p class="text-slate-600">And more! All services are pay-per-use. No subscriptions, no commitments.</p>
                 </div>
             </div>
         </section>
-
-        <section id="about" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-                    <div class="md:w-1/2">
-                        <img src="https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A person relaxing comfortably in their modern, well-organized home" class="rounded-2xl shadow-xl w-full h-full object-cover max-h-[550px]">
-                    </div>
-                    <div class="md:w-1/2">
-                        <h2 class="text-4xl font-bold text-slate-900">Why BachNest?</h2>
-                        <p class="mt-4 text-slate-600 text-lg">We started BachNest because we've been there. Moving to a new city is exciting, but it's also filled with challenges. Our mission is to remove the friction and build a transparent ecosystem for urban living.</p>
-                        <div class="mt-8 space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center"><i class="fas fa-check"></i></div>
-                                <div class="ml-4">
-                                    <h4 class="font-bold text-xl">Direct & Transparent</h4>
-                                    <p class="text-slate-600 mt-1">Save more with our lowest brokerage guarantee. We ensure fair pricing by connecting you to verified owners.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center"><i class="fas fa-shield-alt"></i></div>
-                                <div class="ml-4">
-                                    <h4 class="font-bold text-xl">Verified for Your Security</h4>
-                                    <p class="text-slate-600 mt-1">Every listing is physically verified by our team, so you can rent and hire with complete peace of mind.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex-shrink-0 flex items-center justify-center"><i class="fas fa-layer-group"></i></div>
-                                <div class="ml-4">
-                                    <h4 class="font-bold text-xl">All-in-One Convenience</h4>
-                                    <p class="text-slate-600 mt-1">From finding your flat to renting a fridge and hiring help, manage your entire move from one platform.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-       
-        <section id="how-it-works" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-slate-900">Getting Started is Easy</h2>
-                    <p class="mt-4 text-slate-600 text-lg">Settle into your new life in just a few simple steps.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-                    <div class="relative z-10">
-                        <div class="bg-indigo-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto text-3xl font-bold shadow-lg">1</div>
-                        <h3 class="text-2xl font-bold mt-6">Search & Discover</h3>
-                        <p class="mt-2 text-slate-600">Use our smart search to find exactly what you're looking for, from a 1BHK to a tiffin service.</p>
-                    </div>
-                    <div class="relative z-10">
-                        <div class="bg-indigo-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto text-3xl font-bold shadow-lg">2</div>
-                        <h3 class="text-2xl font-bold mt-6">Book with Confidence</h3>
-                        <p class="mt-2 text-slate-600">Explore verified listings, read reviews, and book your chosen home or service directly online.</p>
-                    </div>
-                    <div class="relative z-10">
-                        <div class="bg-indigo-600 text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto text-3xl font-bold shadow-lg">3</div>
-                        <h3 class="text-2xl font-bold mt-6">Move In & Relax</h3>
-                        <p class="mt-2 text-slate-600">We handle the coordination. All you need to do is move in and start enjoying your new city life.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="list-property" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-                    <div class="md:w-1/2">
-                        <h2 class="text-4xl font-bold text-slate-900">Got a Property to Rent Out?</h2>
-                        <p class="mt-4 text-slate-600 text-lg">Let us handle the details. We make listing simple, secure, and free. Reach verified tenants in Greater Noida without the hassle.</p>
-                        <div class="mt-8 space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center text-xl font-bold">1</div>
-                                <div class="ml-4">
-                                    <h4 class="font-bold text-xl">Submit Your Details</h4>
-                                    <p class="text-slate-600 mt-1">Click the button below and fill out a quick form with your property information and contact details.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center text-xl font-bold">2</div>
-                                <div class="ml-4">
-                                    <h4 class="font-bold text-xl">We Verify Your Space</h4>
-                                    <p class="text-slate-600 mt-1">Our team will contact you to schedule a visit. Then, we'll send professional staff to check and photograph your space.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-indigo-100 text-indigo-600 rounded-full w-12 h-12 flex-shrink-0 flex items-center justify-center text-xl font-bold">3</div>
-                                <div class="ml-4">
-                                    <h4 class="font-bold text-xl">Go Live & Get Tenants</h4>
-                                    <p class="text-slate-600 mt-1">Once verified, we'll list your property on our platform, connecting you with a curated list of trusted tenants.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="primary-btn mt-10 inline-block bg-indigo-600 text-white font-semibold px-10 py-3.5 rounded-lg">List Your Property for Free</a>
-                    </div>
-                    <div class="md:w-1/2 mt-12 md:mt-0">
-                        <img src="https://images.pexels.com/photos/7578835/pexels-photo-7578835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A professional real estate agent discussing a listing with a property owner" class="rounded-2xl shadow-xl w-full h-full object-cover max-h-[550px]">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-slate-900">Get In Touch</h2>
-                <p class="mt-4 text-slate-600 text-lg max-w-2xl mx-auto">Have questions or need support? We're here to help you settle in. Reach out to us anytime.</p>
-                <div class="mt-12 flex flex-col md:flex-row justify-center gap-8 md:gap-16">
-                    <div class="text-center">
-                        <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md">
-                            <i class="fas fa-phone-alt text-3xl text-indigo-600"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mt-6">Phone Number</h3>
-                        <a href="tel:9560493506" class="text-lg text-slate-600 hover:text-indigo-600 mt-2 inline-block">9560493506</a>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-md">
-                            <i class="fas fa-envelope text-3xl text-indigo-600"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mt-6">Email Address</h3>
-                        <a href="mailto:support@bachnest.com" class="text-lg text-slate-600 hover:text-indigo-600 mt-2 inline-block">support@bachnest.com</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-slate-900 text-white">
-        <div class="container mx-auto px-6 py-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div>
-                    <h4 class="font-bold text-lg">BachNest</h4>
-                    <p class="mt-4 text-slate-400">Settle in smarter.</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold">Services</h4>
-                    <ul class="mt-4 space-y-2 text-slate-400">
-                        <li><a href="#services" class="hover:text-white">Flats & PGs</a></li>
-                        <li><a href="#services" class="hover:text-white">Appliance Rentals</a></li>
-                        <li><a href="#services" class="hover:text-white">Local Services</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold">Company</h4>
-                    <ul class="mt-4 space-y-2 text-slate-400">
-                        <li><a href="#about" class="hover:text-white">About Us</a></li>
-                        <li><a href="#contact" class="hover:text-white">Contact</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-semibold">Connect</h4>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="#" class="text-slate-400 hover:text-white text-2xl" aria-label="Our Facebook page"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="text-slate-400 hover:text-white text-2xl" aria-label="Our Twitter profile"><i class="fab fa-twitter-square"></i></a>
-                        <a href="#" class="text-slate-400 hover:text-white text-2xl" aria-label="Our Instagram profile"><i class="fab fa-instagram-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 border-t border-slate-700 pt-8 text-center text-slate-500">
-                <p>&copy; 2025 BachNest. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Simple script for mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Script for tabbed search functionality
-        const searchTabs = document.querySelectorAll('.search-tab');
-        const searchInput = document.getElementById('search-input');
-
-        searchTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                searchTabs.forEach(t => {
-                    t.classList.remove('active');
-                    t.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-100');
-                });
-                tab.classList.add('active');
-                tab.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-100');
-                const placeholder = tab.getAttribute('data-placeholder');
-                searchInput.placeholder = placeholder;
-            });
-        });
-    </script>
-
+        </main>
 </body>
 </html>
